@@ -3,6 +3,7 @@
 Fix It First is a sustainability-focused web platform that helps people make smarter decisions about damaged or unwanted items. Instead of immediately throwing things away, users can explore ways to Repair, Reuse, Donate, or Recycle them.
 
 🌐 Live Demo: https://musical-rabanadas-3a96e6.netlify.app
+🌐 Live Demo: https://musical-rabanadas-3a96e6.netlify.app( canvas protocol)
 
 🎯 Problem Statement
 
