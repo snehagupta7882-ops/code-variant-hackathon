@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06110c">
+    <title>Fix It First | Give Items a Second Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#home">Skip to content</a>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+
+    <header class="navbar">
+        <a href="#home" class="logo"><span>🌿</span> Fix It First</a>
+        <nav class="nav-links" id="nav" aria-label="Main">
+            <a href="#home" class="active">Home</a>
+            <a href="#explore">Canvas</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#about">About Us</a>
+        </nav>
+        <a href="#explore" class="nav-btn">Open Canvas ↗</a>
+        <button class="menu-btn" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    </header>
+
+    <main class="wrap">
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div>
+                <div class="badge"><span>🌱</span> A smarter way to reduce waste</div>
+                <h1>Don’t Throw It Away. <span>Give It a Second Life.</span></h1>
+                <p class="lead">Every item deserves a second chance. Drag your item onto the canvas and discover how to
+                    repair, reuse, donate or recycle it.</p>
+
+                <div class="search" id="form" role="search">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="text" id="q" placeholder="Type to filter the item cards below…"
+                        aria-label="Filter item cards" autocomplete="off">
+                </div>
+                <p class="status" id="status">↓ The cards are on the canvas below. Drag one into the Analyze zone.</p>
+
+                <div class="links"><a href="#how" class="link2">▷ How it works</a></div>
+
+                <div class="steps">
+                    <div class="step"><i>🃏</i>
+                        <div><small>01</small>
+                            <p>Drag an item card</p>
+                        </div>
+                    </div><span class="arr">→</span>
+                    <div class="step"><i>🎯</i>
+                        <div><small>02</small>
+                            <p>Drop it in a zone</p>
+                        </div>
+                    </div><span class="arr">→</span>
+                    <div class="step"><i>🌿</i>
+                        <div><small>03</small>
+                            <p>Give it a new life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual" aria-hidden="true">
+                <div class="orbit o1"></div>
+                <div class="orbit o2"></div>
+                <div class="globe">♻</div>
+                <div class="fc c1"><i>🔧</i>
+                    <div>
+                        <h3>Repair</h3>
+                        <p>Fix what you can</p>
+                    </div>
+                </div>
+                <div class="fc c2"><i>♻</i>
+                    <div>
+                        <h3>Reuse</h3>
+                        <p>Give it a new purpose</p>
+                    </div>
+                </div>
+                <div class="fc c3"><i>♡</i>
+                    <div>
+                        <h3>Donate</h3>
+                        <p>Help someone in need</p>
+                    </div>
+                </div>
+                <div class="fc c4"><i>⟳</i>
+                    <div>
+                        <h3>Recycle</h3>
+                        <p>Turn waste into value</p>
+                    </div>
+                </div>
+                <div class="impact"><span>🌱</span>
+                    <div>
+                        <h4>Small choices. Big impact.</h4>
+                        <p>Less waste. A greener tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canvas -->
+        <section class="block reveal" id="explore">
+            <div class="head">
+                <span class="tag">THE CANVAS</span>
+                <h2>Drag. Drop. <span>Decide.</span></h2>
+                <p>Drag an item card into the Analyze zone. Then drag a solution card into an action zone.</p>
+            </div>
+
+            <div class="canvas">
+                <aside class="tray" aria-label="Cards">
+                    <h3 id="trayT">ITEM CARDS</h3>
+                    <div class="cards" id="tray"></div>
+                </aside>
+
+                <div class="stage">
+                    <div class="zone z-an" data-zone="analyze" tabindex="0"
+                        aria-label="Analyze zone. Drop item and damage cards here.">
+                        <div class="zt">① ANALYZE ZONE</div>
+                        <div class="slots">
+                            <div class="slot" id="sItem"></div>
+                            <div class="slot" id="sDmg"></div>
+                        </div>
+                        <div id="pv"></div>
+                    </div>
+                    <div id="results"></div>
+                </div>
+
+                <aside class="zones" aria-label="Action zones">
+                    <div class="zone z-act" data-zone="impact" tabindex="0"
+                        aria-label="Count my impact zone. Drop a solution card here.">
+                        <b>🌱 COUNT MY IMPACT</b><small>Drop a solution card</small>
+                        <div class="mini"><span id="tN">0</span> items · <span id="tS">₹0</span> · <span id="tK">0.0
+                                kg</span></div>
+                    </div>
+                    <div class="zone z-act" data-zone="shops" tabindex="0"
+                        aria-label="Find nearby help zone. Drop a solution card here.">
+                        <b>📍 FIND NEARBY HELP</b><small>Drop a solution card</small>
+                    </div>
+                    <div class="zone z-act z-clear" data-zone="clear" tabindex="0"
+                        aria-label="Clear canvas zone. Drop any card here.">
+                        <b>🗑️ CLEAR CANVAS</b><small>Drop any card</small>
+                    </div>
+                </aside>
+            </div>
+            <input type="file" id="photo" accept="image/*" hidden>
+        </section>
+
+        <!-- Solutions -->
+        <section class="block reveal" id="solutions">
+            <div class="head"><span class="tag">A SECOND CHANCE</span>
+                <h2>Four ways to make a <span>difference.</span></h2>
+                <p>The right solution depends on your item’s condition and what it needs.</p>
+            </div>
+            <div class="sols">
+                <article class="sol">
+                    <div class="si">🔧</div>
+                    <h3>Repair</h3>
+                    <p>Discover practical ways to fix damaged items and extend their life.</p><a href="#explore">Try it
+                        on the canvas ↗</a>
+                </article>
+                <article class="sol">
+                    <div class="si">♻️</div>
+                    <h3>Reuse</h3>
+                    <p>Find creative ideas to give old items a useful new purpose.</p><a href="#explore">Try it on the
+                        canvas ↗</a>
+                </article>
+                <article class="sol">
+                    <div class="si">💚</div>
+                    <h3>Donate</h3>
+                    <p>Help someone else by passing on items that are still usable.</p><a href="#explore">Try it on the
+                        canvas ↗</a>
+                </article>
+                <article class="sol">
+                    <div class="si">🌍</div>
+                    <h3>Recycle</h3>
+                    <p>Explore responsible disposal and recycling options.</p><a href="#explore">Try it on the canvas
+                        ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="block reveal" id="how">
+            <div class="head"><span class="tag">SIMPLE BY DESIGN</span>
+                <h2>Better choices, <span>made simple.</span></h2>
+            </div>
+            <div class="how">
+                <div class="hc"><span>01</span>
+                    <h3>Drag your item</h3>
+                    <p>Pick an item card and drop it in the Analyze zone.</p>
+                </div>
+                <div class="hc"><span>02</span>
+                    <h3>Drop the damage</h3>
+                    <p>Choose what is broken and get steps, costs and options.</p>
+                </div>
+                <div class="hc"><span>03</span>
+                    <h3>Drag a solution</h3>
+                    <p>Drop a solution card to count your impact or find nearby help.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about reveal" id="about">
+            <span class="tag">OUR PURPOSE</span>
+            <h2>Before you throw it away,<br><span>give it another chance.</span></h2>
+            <p>Fix It First helps people explore practical alternatives to throwing things away. Because a damaged item
+                doesn’t always mean the end of its useful life.</p>
+            <a href="#explore" class="btn">Open the Canvas →</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="logo">🌿 Fix It First</a>
+        <p>Repair more. Waste less. Live greener.</p>
+        <small>© 2026 Fix It First</small>
+    </footer>
+
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    <script>
+        window.onerror = function (m, s, l) { document.body.insertAdjacentHTML("afterbegin", '<pre style="position:fixed;z-index:9999;top:0;left:0;right:0;background:#b00020;color:#fff;padding:12px;margin:0;font-size:14px;white-space:pre-wrap">JS ERROR: ' + m + ' (line ' + l + ')</pre>') }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
